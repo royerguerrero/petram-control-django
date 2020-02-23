@@ -5,9 +5,6 @@ from django.contrib.auth.models import User
 
 class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    nombres = models.CharField(max_length=100)
-    apellidos = models.CharField(max_length=100)
-    email = models.EmailField(unique=True)
 
     TIPOS_DE_IDENTIFICACION = (
         ('T.I', 'Tarjeta de identidad'),
