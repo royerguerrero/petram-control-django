@@ -1,3 +1,12 @@
+"""Config Admin de Clases"""
+
+# Django
 from django.contrib import admin
 
-# Register your models here.
+# Models
+from clases.models import Clase, DetalleClase, Vehiculo
+
+@admin.register(Clase)
+class ClaseAdmin(admin.ModelAdmin):
+    pass
+

@@ -20,7 +20,7 @@ class Clase(models.Model):
 
 
 class DetalleClase(models.Model):
-    clase = models.ForeignKey(Clase, on_delete=models.CASCADE)
+    clase = models.OneToOneField(Clase, on_delete=models.CASCADE)
     profesor = models.ForeignKey(Perfil, on_delete=models.CASCADE)
 
 
