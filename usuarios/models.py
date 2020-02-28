@@ -32,3 +32,5 @@ class Perfil(models.Model):
 
     creado = models.DateTimeField(auto_now_add=True)
     modificado = models.DateTimeField(auto_now=True)
+
+    creado_por = models.ManyToManyField("self")

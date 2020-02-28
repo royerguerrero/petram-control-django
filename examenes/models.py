@@ -10,27 +10,23 @@ class Examen(models.Model):
     fecha_publicacion = models.DateTimeField('Fecha de publicación', auto_now_add=True)
     fecha_modificacion = models.DateTimeField('Fecha de modificación', auto_now=True)
 
-    creado_por = models.ForeignKey('usuarios.Perfil', on_delete=models.SET_DEFAULT)
+    creado_por = models.ForeignKey('usuarios.Perfil', on_delete=models.CASCADE)
 
-class Preguntas(models.Model):
+class Pregunta(models.Model):
     enunciado = models.TextField()
     imagen = models.ImageField()
     examen = models.ForeignKey('Examen', on_delete=models.CASCADE)
     fecha_publicacion = models.DateTimeField('Fecha de publicación', auto_now_add=True)
     fecha_modificacion = models.DateTimeField('Fecha de modificación', auto_now=True)
 
-    creado_por = models.ForeignKey('usuarios.Perfil', on_delete=models.SET_DEFAULT)
+    creado_por = models.ForeignKey('usuarios.Perfil', on_delete=models.CASCADE)
 
 class Respuesta(models.Model):
     enunciado = models.CharField(max_length=255)
     imagen = models.ImageField()
-<<<<<<< HEAD
     pregunta = models.ForeignKey('Pregunta', on_delete=models.CASCADE)
     correcta = models.BooleanField('Respuesta Correnta', default=False)
-=======
-    pregunta = models.ForeignKey('Preguntas', on_delete=models.CASCADE)
->>>>>>> 1aa6ba53373c9f5bf72ef8ff30be5d9ce9df2232
     fecha_publicacion = models.DateTimeField('Fecha de publicación', auto_now_add=True)
     fecha_modificacion = models.DateTimeField('Fecha de modificación', auto_now=True)
 
-    creado_por = models.ForeignKey('usuarios.Perfil', on_delete=models.SET_DEFAULT)
+    creado_por = models.ForeignKey('usuarios.Perfil', on_delete=models.CASCADE)
