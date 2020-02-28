@@ -12,7 +12,7 @@ class Perfil(models.Model):
         ('C.E', 'Cedula de Extrangeria'),
     )
 
-    tipo_de_id  = models.CharField('Tipo de identificación', max_length=3, choices=TIPOS_DE_IDENTIFICACION)
+    tipo_de_id  = models.CharField('Tipo de identificación', max_length=3, choices=TIPOS_DE_IDENTIFICACION, default='C.C')
     numero_id = models.CharField('Número de Identificación', max_length=20)
 
     CURSOS = (

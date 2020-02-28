@@ -19,11 +19,6 @@ class Clase(models.Model):
     modificada = models.DateTimeField(auto_now=True)
 
 
-class DetalleClase(models.Model):
-    clase = models.OneToOneField(Clase, on_delete=models.CASCADE)
-    profesor = models.ForeignKey(Perfil, on_delete=models.CASCADE)
-
-
 class Vehiculo(models.Model):
     modelo = models.CharField(max_length=100)
     marca = models.CharField(max_length=100)
@@ -32,3 +27,9 @@ class Vehiculo(models.Model):
     
     añadido = models.DateTimeField(auto_now_add=True)
     modificado = models.DateTimeField(auto_now=True)
+
+
+class DetalleClase(models.Model):
+    clase = models.OneToOneField(Clase, on_delete=models.CASCADE)
+    profesor = models.ForeignKey(Perfil, on_delete=models.CASCADE)
+    vehiculo = models.OneToOneField(Vehiculo, on_delete=models.CASCADE)
