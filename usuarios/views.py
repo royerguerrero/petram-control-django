@@ -2,9 +2,8 @@
 
 # Django
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
 
 def login_view(request):
     if request.method == 'POST':
@@ -19,6 +18,11 @@ def login_view(request):
             return render(request, 'login.html', {'error':'Nombre de usuario y contraseña invalida'})
 
     return render(request, 'login.html')
+
+@login_required()
+def logout_view(request):
+    logout(request)
+    return redirect('logout')
 
 def forget_password(request, usuario_id):
     return render(request, 'forget_password.html', {'usuario_id':usuario_id})
