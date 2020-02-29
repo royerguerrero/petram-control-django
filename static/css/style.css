@@ -1,3 +1,13 @@
+.banner-dash{
+    height: 60vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/dash-banner.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 72%;
+    background-attachment: fixed;
+}  
+
 .banner{
     height: 90vh;
     width: 100%;
@@ -5,4 +15,13 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+
+.card-horario{
+    height: 40vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)), url('../img/card-horario.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 70%;
 }

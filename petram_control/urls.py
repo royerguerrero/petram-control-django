@@ -20,6 +20,8 @@ urlpatterns = [
     path('dashboard', usuarios_views.dashboard, name='dashboard'),
 
     # Clases paths
-    path('dashboard/horario', clases_views.horario, name='horario')
+    path('dashboard/horario', clases_views.horario, name='horario'),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = 'Administrador de Petram Control'

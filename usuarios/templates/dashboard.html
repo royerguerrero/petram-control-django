@@ -4,9 +4,30 @@
     <title>Dashboard - Petram Control</title>
 {% endblock %}}
 
+{% load static %}
+
 {% block nav-items %}
-    <li class="nav-item">
-        <a class="nav-link text-danger" href="{% url "logout" %}">Logout</a>
-    </li>
+<li class="nav-item">
+    <a class="nav-link text-danger" href="{% url "logout" %}">Logout</a>
+</li>
 {% endblock nav-items %}
 
+{% block container %}
+<section>
+
+    <div class="banner-dash shadow-lg">
+        <div class="rounded-circle text-center pt-5 text-white">
+            <h1 class="text-white font-weight-bold mt-5 pt-4"> Dashboard </h1>
+            <br>
+            <h2 class="text-white h5">{{ user.username }}</h2>
+            <small class="small">Estudiante - Curso A2</small>
+        </div>
+    </div>
+    <div class="container rounded shadow-lg card-horario my-5 text-center pt-5 text-white">
+        <h2 class="text-white">Horario</h2>
+        <p>Conoce tus horarios semanales, organiaza tu agenda</p>
+        <a class="btn btn-secondary mt-1" href="{% url "horario" %}">Descubrir mi horario</a>
+    </div>
+
+</section>
+{% endblock %}

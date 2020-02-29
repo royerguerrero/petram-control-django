@@ -5,6 +5,9 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+# Models
+from usuarios.models import Perfil
+
 def login_view(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -13,7 +16,8 @@ def login_view(request):
         user = authenticate(request, username=username, password=password)
         if user is not None:
             login(request, user)
-            return redirect('dashboard')
+            # perfil = Perfil.objects.get(user_id=user.id)
+            return render(request, 'dashboard.html', {'perfil':perfil})
         else:
             return render(request, 'login.html', {'error':'Nombre de usuario y contraseña invalida'})
 
